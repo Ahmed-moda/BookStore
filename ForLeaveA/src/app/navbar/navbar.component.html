@@ -1,0 +1,16 @@
+
+<p>
+  <mat-toolbar style="background-color: black;">
+    <a routerLink="/"><button style="background-color: black;border: none;"><span style="color: white;">My APP</span></button></a>
+    <a *ngIf="token" routerLink="/Books" ><button style="background-color: black;border: none;margin: 50px;"><span style="color: white;">Books</span></button></a>
+
+    
+
+    <span class="example-spacer"></span>
+    <a *ngIf="!token" routerLink="/Login" ><button style="background-color: black;border: none;margin: 50px;"><span style="color: white;">Login</span></button></a>
+    <a *ngIf="!token"routerLink="/Register" ><button style="background-color: black;border: none;"><span style="color: white;">Register</span></button></a>
+    <button *ngIf="token" style="background-color: black;border: none;"><span style="color: white;" (click)="Logout()">Log out</span></button>
+  </mat-toolbar>
+</p>
+
+

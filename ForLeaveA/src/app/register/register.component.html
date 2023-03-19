@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form [formGroup]="registerform" (ngSubmit)="register()">
+
+              <div class="mb-3">
+                <label  class="form-label">Firstname</label>
+                <input type="text" class="form-control" formControlName="FirstName" >
+                <div *ngIf="FirstName?.touched&&FirstName?.errors?.['required']" class="alert alert-danger">This feld is Required</div>
+              </div>
+                <div class="mb-3">
+                  <label  class="form-label">Email</label>
+                  <input type="text" class="form-control" formControlName="Email" >
+                  <div *ngIf="Email?.touched&&Email?.errors?.['required']" class="alert alert-danger">This feld is Required</div>
+
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Username</label>
+                    <input type="text" class="form-control" formControlName="Username" >
+                    <div *ngIf="Username?.touched&&Username?.errors?.['required']" class="alert alert-danger">This feld is Required</div>
+                  </div>
+                <div class="mb-3">
+                  <label  class="form-label">Password</label>
+                  <input type="password" class="form-control" formControlName="password" >
+                  <div *ngIf="password?.touched&&password?.errors?.['required']" class="alert alert-danger">This feld is Required</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <ul>    
+                <li class="alert alert-danger" *ngFor='let error of errors;'>    
+                    {{error}}   
+            </ul>  
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
